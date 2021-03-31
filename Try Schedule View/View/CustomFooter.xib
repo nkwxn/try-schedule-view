@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomFooterView" customModule="Try_Schedule_View" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xbu-O1-ai1" userLabel="ContentHolder View">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhx-Ve-pYK" userLabel="Border View">
+                            <rect key="frame" x="15" y="0.0" width="384" height="64"/>
+                            <color key="backgroundColor" red="0.99574273820000003" green="0.97704297299999998" blue="0.94117248060000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="zhx-Ve-pYK" secondAttribute="bottom" constant="10" id="Jg8-mT-f2Q"/>
+                        <constraint firstItem="zhx-Ve-pYK" firstAttribute="top" secondItem="Xbu-O1-ai1" secondAttribute="top" id="a8r-sv-qbr"/>
+                        <constraint firstAttribute="trailing" secondItem="zhx-Ve-pYK" secondAttribute="trailing" constant="15" id="dKT-ob-cC9"/>
+                        <constraint firstItem="zhx-Ve-pYK" firstAttribute="leading" secondItem="Xbu-O1-ai1" secondAttribute="leading" constant="15" id="eON-00-08X"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Xbu-O1-ai1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7Lk-dm-yVD"/>
+                <constraint firstItem="Xbu-O1-ai1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="D6A-Ra-ycx"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Xbu-O1-ai1" secondAttribute="bottom" id="PAR-82-zDU"/>
+                <constraint firstItem="Xbu-O1-ai1" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="fOi-Xa-7zg"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="borderView" destination="zhx-Ve-pYK" id="f5F-df-LBD"/>
+            </connections>
+            <point key="canvasLocation" x="129" y="212"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
