@@ -39,13 +39,39 @@ class StudyScheduleTableViewController: UITableViewController {
         self.navigationItem.title = "Today's Schedule"
         
         // Create a small title label
-        var labelSubtitle = UILabel()
+        let labelSubtitle = UILabel()
         labelSubtitle.text = dateFormat.string(from: today)
         labelSubtitle.backgroundColor = UIColor.clear
+        labelSubtitle.textColor = UIColor.systemGray
         labelSubtitle.font = UIFont.systemFont(ofSize: 14)
         
         // Add subview to hierarchy
+        for subview in self.navigationController!.navigationBar.subviews {
+            let stringFromClass = NSStringFromClass(subview.classForCoder)
+            if stringFromClass.contains("UINavigationBarLargeTitleView") {
+                let largeSubViews = subview.subviews
+                
+                /*
+                for sbv in largeSubViews {
+                    if let lbl = sbv as? UILabel {
+                        lbl.layoutMargins = UIEdgeInsets(top: 4, left: 0, bottom: 0, right: 0)
+                        lbl.setNeedsLayout()
+                    }
+                }
+                */
+                subview.addSubview(labelSubtitle)
+            }
+        }
         
+        self.navigationController!.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30, weight: .bold)]
+
+                labelSubtitle.translatesAutoresizingMaskIntoConstraints = false
+                NSLayoutConstraint.activate([
+                    labelSubtitle.leftAnchor.constraint(equalTo: self.navigationController!.navigationBar.leftAnchor, constant: 16.0),
+                    labelSubtitle.bottomAnchor.constraint(equalTo: self.navigationController!.navigationBar.bottomAnchor, constant: -37.0),
+                    labelSubtitle.heightAnchor.constraint(equalToConstant: 20.0),
+                    labelSubtitle.widthAnchor.constraint(equalToConstant: 200.0)
+                    ])
         
         // MARK: - Sort the prototype data
         sortedSchedule = schedule.prototypeData.filter({ (sch: Schedule) in
